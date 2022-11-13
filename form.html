@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="портфолио, разработка, программирование, веб">
+    <meta name="description" content="Портфолио веб-разработчика">
+    <title>Рогулин Илья M33041</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/index.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="header-navigation">
+            <a href="about-me.html" class="header-navigation__link">Обо мне</a>
+            <a href="contact.html" class="header-navigation__link">Контакты</a>
+            <a href="ascii.html" class="header-navigation__link">ASCII ART</a>
+            <a href="code.html" class="header-navigation__link">Code</a>
+            <a href="favourite-quote.html" class="header-navigation__link">Любимая цитата</a>
+            <a href="form.html" class="header-navigation__link">Форма</a>
+        </nav>
+        <h1>Портфолио</h1>
+    </header>
+    <main>
+        <div class="container">
+            <form class="form">
+                <h2>User info</h2>
+                <div class="form__item">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="form__item">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form__item">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br>
+                </div>
+                <div class="form__item">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address"><br>
+                </div>
+                <div class="form__item">
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone"><br>
+                </div>
+                <div class="form__item">
+                    <label for="website">Website:</label>
+                    <input type="text" id="website" name="website"><br>
+                </div>
+                <div class="form__item">
+                    <label for="company">Company:</label>
+                    <input type="text" id="company" name="company"><br>
+                </div>
+                <div class="form__item">
+                    <input type="submit" value="Create!">
+                </div>
+            </form>
+            <button class="upload-button">Upload users</button>
+            <h2>Local Users</h2>
+            <div class="table">
+                <div class="table__cell">#</div>
+                <div class="table__cell">Username</div>
+                <div class="table__cell">Name</div>
+                <div class="table__cell">Email</div>
+                <div class="table__cell">Address</div>
+                <div class="table__cell">Phone</div>
+                <div class="table__cell">Website</div>
+                <div class="table__cell">Company</div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <h2>Page load time in Javascript</h2>
+        <div class="page-load">Page load time is <span class="page-load__time">0</span> seconds</div>
+    </footer>
+    <script src="scripts/form.js"></script>
+</body>
+</html>

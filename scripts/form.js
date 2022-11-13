@@ -1,0 +1,97 @@
+function validateData(data) {
+    const errorKeys = Object.keys(data).filter(key => !data[key]);
+
+    if (errorKeys.length) {
+        const errorMessage = `${errorKeys.join(', ')} is empty. Fill it.`;
+
+        throw new Error(errorMessage)
+    }
+}
+
+
+function createTableCellElement(value) {
+    const tableCellElement = document.createElement('div');
+    const tableCellClass = 'table__cell';
+
+    tableCellElement.textContent = value;
+    tableCellElement.classList.add(tableCellClass);
+
+    return tableCellElement;
+}
+
+
+function getUsersData() {
+    const usersData = localStorage.getItem('usersData');
+
+    return usersData ? JSON.parse(usersData) : [];
+}
+
+function getRowData(userData) {
+    return [
+        userData.number,
+        userData.username,
+        userData.name,
+        userData.email,
+        userData.address,
+        userData.phone,
+        userData.website,
+        userData.company,
+    ];
+}
+
+function createTableRowElement(userData) {
+    const rowData = getRowData(userData);
+
+    const cells = rowData.map(createTableCellElement);
+
+    insertCells(cells);
+}
+
+function insertCells(cells) {
+   const table = document.querySelector('.table');
+
+    cells.forEach(cell => {
+       table.insertAdjacentElement('beforeend', cell);
+   })
+}
+
+
+function saveUserData(data) {
+    const usersData = getUsersData();
+    usersData.push(data);
+
+    localStorage.setItem('usersData', JSON.stringify(usersData));
+}
+
+function initFromLS() {
+    const usersData = getUsersData();
+
+    usersData.forEach(createTableRowElement);
+}
+
+function setFormOnSubmit () {
+    const form = document.querySelector('.form');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const userData = {
+            ...Object.fromEntries(formData),
+            number: getUsersData().length + 1,
+        };
+
+        try {
+            validateData(userData);
+            createTableRowElement(userData);
+            saveUserData(userData);
+
+            form.reset();
+        } catch (e) {
+            alert(e.message)
+        }
+    })
+}
+
+
+initFromLS();
+setFormOnSubmit();

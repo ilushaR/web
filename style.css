@@ -47,11 +47,19 @@ a {
     background-color: #f26659;
 }
 
-.header-navigation a {
+.header-navigation__link {
     width: 100%;
     padding: 20px 0;
     text-align: center;
     color: inherit;
+}
+
+.header-navigation__link_active {
+    color: white;
+}
+
+.header-navigation__link:hover {
+    text-decoration: underline;
 }
 
 .node-js {

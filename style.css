@@ -111,6 +111,12 @@ a {
     border-radius: 10px;
 }
 
+.upload-button {
+    width: fit-content;
+    padding: 15px 32px;
+    cursor: pointer;
+}
+
 .table {
     display: grid;
     grid-template-columns: repeat(8, auto);
@@ -130,6 +136,13 @@ a {
 
 .table__cell:nth-last-child(-n+8) {
     border-bottom: 2px solid grey;
+}
+
+.error {
+    color: red;
+    padding: 20px 0;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 footer {

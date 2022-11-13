@@ -89,6 +89,49 @@ a {
     color: gray;
 }
 
+.form {
+    max-width: fit-content;
+    padding: 10px;
+    border: 3px solid grey;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.form__item {
+    padding: 5px 0;
+}
+
+.form__item label {
+    display: inline-block;
+    min-width: 100px;
+}
+
+.form__item input {
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+}
+
+.table__cell {
+    white-space: nowrap;
+    padding: 5px;
+    border: 2px solid grey;
+    border-right: none;
+    border-bottom: none;
+}
+
+.table__cell:nth-child(8n) {
+    border-right: 2px solid grey;
+}
+
+.table__cell:nth-last-child(-n+8) {
+    border-bottom: 2px solid grey;
+}
+
 footer {
     position: absolute;
     left: 0;

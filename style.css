@@ -6,6 +6,12 @@
 
 body {
     font: normal 16px Verdana, Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
+}
+
+main {
+    padding-bottom: 100px;
 }
 
 section {
@@ -28,6 +34,8 @@ a {
 .container {
     width: 80%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .header-navigation {
@@ -35,13 +43,13 @@ a {
     left: 0;
     display: flex;
     width: 100%;
-    padding: 20px 0;
     justify-content: space-between;
     background-color: #f26659;
 }
 
 .header-navigation a {
     width: 100%;
+    padding: 20px 0;
     text-align: center;
     color: inherit;
 }
@@ -71,4 +79,25 @@ a {
 
 .wolf {
     color: gray;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 3px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-load__time {
+    color: red;
+}
+
+@media screen and (max-width: 480px) {
+    #ascii, .about-me__text, #code pre {
+        display: none;
+    }
 }

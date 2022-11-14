@@ -58,7 +58,7 @@ async function getUsers() {
             .slice(0, usersLength)
             .map(mapUserResponse);
     } catch {
-        throw new Error('Network Errro');
+        throw new Error('Network Error');
     }
 }
 

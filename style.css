@@ -138,6 +138,11 @@ a {
     border-bottom: 2px solid grey;
 }
 
+.spinner {
+    margin-top: 80px;
+    height: 80px;
+}
+
 .error {
     color: red;
     padding: 20px 0;

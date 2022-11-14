@@ -1,10 +1,45 @@
 function validateData(data) {
-    const errorKeys = Object.keys(data).filter(key => !data[key]);
+    const errors = [];
 
-    if (errorKeys.length) {
-        const errorMessage = `${errorKeys.join(', ')} is empty. Fill it.`;
+    // check if username is alphanumeric
+    if (!validator.isAlphanumeric(data.username)) {
+        errors.push('Username must be alphanumeric');
+    }
 
-        throw new Error(errorMessage)
+    // check if name with correct length
+    if (!validator.isLength(data.name, { min: 3 })) {
+        errors.push('Name length must be greater than 2');
+    }
+
+    // check if email is correct
+    if (!validator.isEmail(data.email)) {
+        errors.push('Email is not valid');
+    }
+
+    // check if address is not empty
+    if (validator.isEmpty(data.address)) {
+        errors.push('Address is empty');
+    }
+
+    // check if phone is correct
+    if (!validator.isMobilePhone(data.phone)) {
+        errors.push('Phone is not valid');
+    }
+
+    // check if website is not empty
+    if (validator.isEmpty(data.website)) {
+        errors.push('Website is empty');
+    }
+
+    // check if company is not empty
+    if (validator.isEmpty(data.company)) {
+        errors.push('Company is empty');
+    }
+
+    if (errors.length) {
+        const errorMessage = `${errors.join('\n')}`;
+
+        throw new Error(errorMessage);
     }
 }
 

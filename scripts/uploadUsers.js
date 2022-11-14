@@ -12,10 +12,13 @@ function renderResult(element) {
 function setLoading() {
     clearData();
 
-    const loadingGif = document.createElement('img');
-    loadingGif.src = 'img/loading.gif';
+    const opts = {
+        className: 'spinner',
+        position: 'relative',
+    };
 
-    renderResult(loadingGif)
+    // Create loading spinner
+    new Spin.Spinner(opts).spin(result);
 }
 
 function setError(message) {

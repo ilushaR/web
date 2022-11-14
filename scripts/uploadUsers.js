@@ -85,7 +85,7 @@ function createTableCellElement(value) {
 }
 
 
-function getRowData(userData) {
+function getUserRowData(userData) {
     return [
         userData.id,
         userData.username,
@@ -98,8 +98,8 @@ function getRowData(userData) {
     ];
 }
 
-function createTableRowElement(table, userData) {
-    const rowData = getRowData(userData);
+function createTableUserRowElement(table, userData) {
+    const rowData = getUserRowData(userData);
 
     const cells = rowData.map(createTableCellElement);
 
@@ -117,7 +117,7 @@ function createTable(usersData) {
 
     createTableHeaders(table);
 
-    usersData.forEach(userData => createTableRowElement(table, userData));
+    usersData.forEach(userData => createTableUserRowElement(table, userData));
 
     renderResult(table);
 
@@ -131,7 +131,7 @@ function insertCellsIntoTable(table, cells) {
 }
 
 
-function setButtonOnClick () {
+function setButtonOnClick() {
     const button = document.querySelector('.upload-button');
 
     button.addEventListener('click', async () => {
